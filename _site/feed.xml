@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <title>anirudh24seven</title>
+    <description>Thoughts and rants by anirudh24seven
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 17:16:03 +0530</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 17:16:03 +0530</lastBuildDate>
+    <link>http://anirudh24seven.github.io//</link>
+    <atom:link href="http://anirudh24seven.github.io//feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 08 Dec 2014 17:42:42 +0530</pubDate>
+    <lastBuildDate>Mon, 08 Dec 2014 17:42:42 +0530</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Welcome to my devlog</title>
+        <description>&lt;p&gt;Almost every developer wants to maintain a devlog. There are a few difficulties though. Here are the top 2 in my mind.&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;h2 id=&quot;difficulties&quot;&gt;Difficulties:&lt;/h2&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Laziness&lt;/li&gt;
+  &lt;li&gt;Devs usually can’t/don’t want to reveal their work because of legal/marketing issues&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;solutions&quot;&gt;Solutions:&lt;/h2&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;I have resolved not to be lazy. Trust me.&lt;/li&gt;
+  &lt;li&gt;I work on open source stuff. So I don’t think there’ll be issues.&lt;/li&gt;
+&lt;/ol&gt;
 
+&lt;p&gt;I am an active Twitter user but it is not suited for large posts. First, I experimented with just echoing text into a log file.&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Welcome to my devlog!&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; 08-12-2014.log&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;However, this approach did not seem comfortable.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;I wanted timestamps and I didn’t want to do them manually&lt;/li&gt;
+  &lt;li&gt;I wanted to maintain them online instead of limiting myself to a local machine&lt;/li&gt;
+  &lt;li&gt;I wanted to learn something new on the way&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I remembered &lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub pages&lt;/a&gt; and that I had created one at &lt;a href=&quot;http://anirudh24seven.github.io/&quot;&gt;anirudh24seven.github.io&lt;/a&gt; long ago. I experimented around for a while and came upon &lt;a href=&quot;jekyllrb.com&quot;&gt;Jekyll&lt;/a&gt;. It seemed to be just what I wanted.&lt;/p&gt;
+
+&lt;p&gt;So, here I am, serving up my first devlog with Jekyll and GitHub pages. Thanks GitHub!&lt;/p&gt;
 </description>
-        <pubDate>Mon, 08 Dec 2014 22:34:23 +0530</pubDate>
-        <link>http://yourdomain.com/jekyll/update/2014/12/08/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2014/12/08/welcome-to-jekyll.html</guid>
+        <pubDate>Mon, 08 Dec 2014 22:54:23 +0530</pubDate>
+        <link>http://anirudh24seven.github.io//devlog/2014/12/08/welcome-to-my-dev-log.html</link>
+        <guid isPermaLink="true">http://anirudh24seven.github.io//devlog/2014/12/08/welcome-to-my-dev-log.html</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>devlog</category>
         
       </item>
     
