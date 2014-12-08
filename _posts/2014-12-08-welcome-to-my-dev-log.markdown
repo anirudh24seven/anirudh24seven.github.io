@@ -3,6 +3,7 @@ layout: post
 title:  "Welcome to my devlog"
 date:   2014-12-08 17:24:23
 categories: devlog
+comments: True
 ---
 Almost every developer wants to maintain a devlog. There are a few difficulties though. Here are the top 2 in my mind.
 
