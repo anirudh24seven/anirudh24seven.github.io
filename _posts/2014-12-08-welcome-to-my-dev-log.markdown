@@ -34,3 +34,5 @@ However, this approach did not seem comfortable.
 I remembered [GitHub pages](https://pages.github.com/) and that I had created one at [anirudh24seven.github.io](http://anirudh24seven.github.io/) long ago. I experimented around for a while and came upon [Jekyll](jekyllrb.com). It seemed to be just what I wanted.
 
 So, here I am, serving up my first devlog with Jekyll and GitHub pages. Thanks GitHub!
+
+{% include twitter_plug.html %}
