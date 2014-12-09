@@ -6,9 +6,46 @@
 </description>
     <link>http://anirudh24seven.github.io//</link>
     <atom:link href="http://anirudh24seven.github.io//feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 08 Dec 2014 18:15:34 +0530</pubDate>
-    <lastBuildDate>Mon, 08 Dec 2014 18:15:34 +0530</lastBuildDate>
+    <pubDate>Wed, 10 Dec 2014 00:51:46 +0530</pubDate>
+    <lastBuildDate>Wed, 10 Dec 2014 00:51:46 +0530</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>iOS keyboard issue</title>
+        <description>&lt;p&gt;I have been looking at &lt;a href=&quot;https://github.com/happyfoxinc/helpstack/issues/20&quot;&gt;this issue in HelpStack iOS&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;There seem to be 4 keyboard-related observers:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;UIKeyboardWillShowNotification&lt;/li&gt;
+  &lt;li&gt;UIKeyboardDidShowNotification&lt;/li&gt;
+  &lt;li&gt;UIKeyboardWillHideNotification&lt;/li&gt;
+  &lt;li&gt;UIKeyboardDidHideNotification&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;However, I could find very little first-party documentation about these observers. Only found the below two:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html&quot;&gt;Text Programming Guide for iOS&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/c/data/UIKeyboardWillShowNotification&quot;&gt;UIWindow Notifications&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Sadly, they don’t seem to be very explanatory.&lt;/p&gt;
+
+&lt;p&gt;This &lt;a href=&quot;http://stackoverflow.com/questions/1126726/how-to-make-a-uitextfield-move-up-when-keyboard-is-present&quot;&gt;StackOverflow question&lt;/a&gt; seems to have a lot of responses. But most of them don’t seem to be the complete fix. (Go ahead. Upvote &lt;a href=&quot;http://stackoverflow.com/questions/1126726/how-to-make-a-uitextfield-move-up-when-keyboard-is-present&quot;&gt;the question&lt;/a&gt;.) Looks like Apple hasn’t provided enough documentation around this.&lt;/p&gt;
+
+&lt;p&gt;So far, I have made whatever changes I could and created a pull request &lt;a href=&quot;https://github.com/happyfoxinc/helpstack/pull/33&quot;&gt;here&lt;/a&gt;. Planning to fix the iPad issue first. The source file for the iPad Ticket Detail ViewController is at &lt;a href=&quot;https://github.com/happyfoxinc/helpstack/blob/master/Classes/UI/HSTicketDetailViewControlleriPad.m&quot;&gt;/Classes/UI/HSTicketDetailViewControlleriPad.m&lt;/a&gt;. I am sure that spending more time with this file will help me understand.&lt;/p&gt;
+
+&lt;p&gt;Hope to fix all the problems soon.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 10 Dec 2014 02:30:00 +0530</pubDate>
+        <link>http://anirudh24seven.github.io//devlog/2014/12/10/ios-keyboard-issue.html</link>
+        <guid isPermaLink="true">http://anirudh24seven.github.io//devlog/2014/12/10/ios-keyboard-issue.html</guid>
+        
+        
+        <category>devlog</category>
+        
+      </item>
     
       <item>
         <title>Welcome to my devlog</title>

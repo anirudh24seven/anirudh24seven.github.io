@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>anirudh24seven</title>
+    <title>iOS keyboard issue</title>
     <meta name="description" content="Thoughts and rants by anirudh24seven
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://anirudh24seven.github.io//">
+    <link rel="canonical" href="http://anirudh24seven.github.io//devlog/2014/12/10/ios-keyboard-issue.html">
 </head>
 
 
@@ -54,31 +54,41 @@
 
     <div class="page-content">
       <div class="wrapper">
-        <div class="home">
+        <div class="post">
 
-  <h1 class="page-heading">Posts</h1>
+  <header class="post-header">
+    <h1 class="post-title">iOS keyboard issue</h1>
+    <p class="post-meta">Dec 10, 2014</p>
+  </header>
 
-  <ul class="post-list">
-    
-      <li>
-        <span class="post-meta">Dec 10, 2014</span>
+  <article class="post-content">
+    <p>I have been looking at <a href="https://github.com/happyfoxinc/helpstack/issues/20">this issue in HelpStack iOS</a>. </p>
 
-        <h2>
-          <a class="post-link" href="/devlog/2014/12/10/ios-keyboard-issue.html">iOS keyboard issue</a>
-        </h2>
-      </li>
-    
-      <li>
-        <span class="post-meta">Dec 8, 2014</span>
+<p>There seem to be 4 keyboard-related observers:</p>
 
-        <h2>
-          <a class="post-link" href="/devlog/2014/12/08/welcome-to-my-dev-log.html">Welcome to my devlog</a>
-        </h2>
-      </li>
-    
-  </ul>
+<ul>
+  <li>UIKeyboardWillShowNotification</li>
+  <li>UIKeyboardDidShowNotification</li>
+  <li>UIKeyboardWillHideNotification</li>
+  <li>UIKeyboardDidHideNotification</li>
+</ul>
 
-  <p class="rss-subscribe">subscribe <a href="/feed.xml">via RSS</a></p>
+<p>However, I could find very little first-party documentation about these observers. Only found the below two:</p>
+
+<ul>
+  <li><a href="https://developer.apple.com/library/ios/documentation/StringsTextFonts/Conceptual/TextAndWebiPhoneOS/KeyboardManagement/KeyboardManagement.html">Text Programming Guide for iOS</a></li>
+  <li><a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UIWindow_Class/index.html#//apple_ref/c/data/UIKeyboardWillShowNotification">UIWindow Notifications</a></li>
+</ul>
+
+<p>Sadly, they don’t seem to be very explanatory.</p>
+
+<p>This <a href="http://stackoverflow.com/questions/1126726/how-to-make-a-uitextfield-move-up-when-keyboard-is-present">StackOverflow question</a> seems to have a lot of responses. But most of them don’t seem to be the complete fix. (Go ahead. Upvote <a href="http://stackoverflow.com/questions/1126726/how-to-make-a-uitextfield-move-up-when-keyboard-is-present">the question</a>.) Looks like Apple hasn’t provided enough documentation around this.</p>
+
+<p>So far, I have made whatever changes I could and created a pull request <a href="https://github.com/happyfoxinc/helpstack/pull/33">here</a>. Planning to fix the iPad issue first. The source file for the iPad Ticket Detail ViewController is at <a href="https://github.com/happyfoxinc/helpstack/blob/master/Classes/UI/HSTicketDetailViewControlleriPad.m">/Classes/UI/HSTicketDetailViewControlleriPad.m</a>. I am sure that spending more time with this file will help me understand.</p>
+
+<p>Hope to fix all the problems soon.</p>
+
+  </article>
 
 </div>
 
@@ -86,6 +96,23 @@
     </div>
     
     
+<!-- Add Disqus comments. -->
+<div id="disqus_thread" class="wrapper"></div>
+<script type="text/javascript">
+  /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+  var disqus_shortname = 'anirudh24seven-github-io'; // required: replace example with your forum shortname
+  var disqus_identifier = "/devlog/2014/12/10/ios-keyboard-issue.html";
+
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
 
     <footer class="site-footer">
