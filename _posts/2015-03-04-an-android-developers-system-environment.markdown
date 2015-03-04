@@ -34,6 +34,9 @@ I am a very active user of Twitter and I use the TweetDeck app to keep myself up
 #### Time keeper
 It is easy to get distracted (especially with Twitter). I have tried out a few time-keeping tools and I have found RescueTime to be the best of them all. Check it out here: [http://rescuetime.com/](http://rescuetime.com/)
 
+### Miscellaneous
+I used to use Thunderbird for my office email, chat with my team over Slack, etc. But I founnd them to be distracting if I kept them open all the time. Therefore, I set up email & Slack on my Android phone, used Pushbullet and started receiving notifications on my Mac, instead. I can choose to open, ignore or dismiss these notifications depending on my mood and this saves time tremendously. So, Pushbullet is a must for me.
+
 ---
 
 Here is the summary:
@@ -47,5 +50,6 @@ Here is the summary:
 7. iTerm2
 8. TweetDeck
 9. RescueTime
+10. Pushbullet
 
 {% include twitter_plug.html %}
