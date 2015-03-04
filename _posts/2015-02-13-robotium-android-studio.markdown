@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Robotium in Android Studio"
-date:   2014-02-13 12:53:33
+date:   2015-02-13 12:53:33
 categories: devlog
 comments: True
 ---
