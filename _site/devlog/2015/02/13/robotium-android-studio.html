@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Welcome to my devlog</title>
+    <title>Robotium in Android Studio</title>
     <meta name="description" content="anirudh24seven's devlog
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://anirudh24seven.github.io//devlog/2014/12/08/welcome-to-my-dev-log.html">
+    <link rel="canonical" href="http://anirudh24seven.github.io//devlog/2015/02/13/robotium-android-studio.html">
 </head>
 
 
@@ -57,47 +57,120 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Welcome to my devlog</h1>
-    <p class="post-meta">Dec 8, 2014</p>
+    <h1 class="post-title">Robotium in Android Studio</h1>
+    <p class="post-meta">Feb 13, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>Almost every developer wants to maintain a devlog. There are a few difficulties though. Here are the top 2 in my mind.</p>
+    <p>I wanted to run UI tests within my Android app and I decided to go ahead with Robotium. I went through the project pages of <a href="https://code.google.com/p/robotium/">Robotium</a> and <a href="http://robotium.com/">Robotium recorder</a> and noticed that they seemed a little outdated. Most importantly, I couldn’t find information easily on how to run Robotium with Android Studio. Robotium Recorder, on the other hand, provided a plugin for Android Studio and you can find more info about it here: <a href="http://robotium.com/pages/user-guide-android-studio">robotium.com/pages/user-guide-android-studio</a>.</p>
 
-<h2 id="difficulties">Difficulties:</h2>
+<h2 id="problem">Problem:</h2>
+<p>Install and run Robotium in Android Studio.</p>
 
-<ol>
-  <li>Laziness</li>
-  <li>Devs usually can’t/don’t want to reveal their work because of legal/marketing issues</li>
-</ol>
-
-<h2 id="solutions">Solutions:</h2>
+<h2 id="observations">Observations:</h2>
 
 <ol>
-  <li>I have resolved not to be lazy. Trust me.</li>
-  <li>I work on open source stuff. So I don’t think there’ll be issues.</li>
+  <li>
+    <p><a href="http://gradleplease.appspot.com/">Gradle, please</a> provided a hit when I searched for Robotium. Robotium is indeed available as a Gradle dependency.</p>
+
+    <pre><code> dependencies {
+   compile 'com.jayway.android.robotium:robotium-solo:5.2.1'
+ }
+</code></pre>
+  </li>
+  <li>
+    <p>I downloaded and installed Robotium Recorder out of curiosity. It worked perfectly. It recorded my actions, allowed me to run my recorded test and also save it. The generated file was a .class though, instead of .java. This meant that I couldn’t edit the test once it was generated. I understood that it would be a non-free feature and moved on.</p>
+  </li>
+  <li>
+    <p>A Google search for integrating Robotium with Android Studio led me to this Stack Overflow question: <a href="http://stackoverflow.com/questions/23275602/robotium-with-android-studio">http://stackoverflow.com/questions/23275602/robotium-with-android-studio</a>. But the answer wasn’t very helpful. So I decided to figure things out on my own and find a solution.</p>
+  </li>
 </ol>
 
-<p>I am an active Twitter user but it is not suited for large posts. First, I experimented with just echoing text into a log file.</p>
-
-<p>Example:</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&quot;Welcome to my devlog!&quot;</span> &gt;&gt; 08-12-2014.log</code></pre></div>
-
-<p>However, this approach did not seem comfortable.</p>
+<h2 id="experiments">Experiments</h2>
 
 <ol>
-  <li>I wanted timestamps and I didn’t want to do them manually</li>
-  <li>I wanted to maintain them online instead of limiting myself to a local machine</li>
-  <li>I wanted to learn something new on the way</li>
+  <li>
+    <p>I peered through the contents of the Robotium website more carefully and found that the project owners had provided PDF files for the Tutorials, instead of displaying them directly. But I was not still clear about creating tests in Android Studio.</p>
+  </li>
+  <li>
+    <p>Now that I wanted to know how to create tests in Android Studio, I searched for it specifically, I came upon this answer: <a href="http://stackoverflow.com/a/20348909/568169">http://stackoverflow.com/a/20348909/568169</a></p>
+  </li>
+  <li>
+    <p>I followed the steps in the above answer and created a test file. I then copy-pasted my recorded test case from Robotium Recorder and ran it. It ran successfully.</p>
+  </li>
 </ol>
 
-<p>I remembered <a href="https://pages.github.com/">GitHub pages</a> and that I had created one at <a href="http://anirudh24seven.github.io/">anirudh24seven.github.io</a> long ago. I experimented around for a while and came upon <a href="jekyllrb.com">Jekyll</a>. It seemed to be just what I wanted.</p>
+<h2 id="summary">Summary:</h2>
+<ol>
+  <li>In your app module, create an <strong>androidTest/java</strong> package under the <strong>src</strong>  folder.</li>
+  <li>
+    <p>Open that module’s <strong>build.gradle</strong> and add the below lines:</p>
 
-<p>So, here I am, serving up my first devlog with Jekyll and GitHub pages. Thanks GitHub!</p>
+    <pre><code> android {
+      
+   sourceSets {
+        
+     androidTest {
+       java.srcDirs = ['androidTest/java']
+     }
+        
+   }
+ }
+</code></pre>
+  </li>
+  <li>Sync the Project. You should now see a folder named “java” in a green color.</li>
+  <li>
+    <p>Create your Robotium test file. For example, in a test file called ExampleTest.java, add the below code:</p>
+
+    <pre><code> import android.test.ActivityInstrumentationTestCase2;
+ import com.robotium.solo.Solo;
+
+ @SuppressWarnings("rawtypes")
+ public class ExampleTest extends ActivityInstrumentationTestCase2 {
+   private Solo solo;
+      
+   private static final String LAUNCHER_ACTIVITY_FULL_CLASSNAME = "com.example.ExampleActivty";
+      
+   private static Class&lt;?&gt; launcherActivityClass;
+   static{
+     try {
+       launcherActivityClass = Class.forName(LAUNCHER_ACTIVITY_FULL_CLASSNAME);
+       } catch (ClassNotFoundException e) {
+         throw new RuntimeException(e);
+       }
+     }
+        
+     @SuppressWarnings("unchecked")
+     public ExampleTestTest() throws ClassNotFoundException {
+       super(launcherActivityClass);
+     }
+        
+     public void setUp() throws Exception {
+       super.setUp();
+       solo = new Solo(getInstrumentation());
+       getActivity();
+     }
+        
+     @Override
+     public void tearDown() throws Exception {
+       solo.finishOpenedActivities();
+       super.tearDown();
+     }
+        
+     public void testRun() {
+       //Wait for activity: 'com.example.ExampleActivty'
+       solo.waitForActivity("ExampleActivty", 2000);
+       //Clear the EditText editText1
+       solo.clearEditText((android.widget.EditText) solo.getView("editText1"));
+       solo.enterText((android.widget.EditText) solo.getView("editText1"), "This is an example text");
+     }
+   }
+</code></pre>
+  </li>
+</ol>
 
 <p>If you liked this post, you can
-<a href="https://twitter.com/intent/tweet?url=http://anirudh24seven.github.io//devlog/2014/12/08/welcome-to-my-dev-log.html&amp;text=Welcome to my devlog&amp;via=anirudh24seven" target="_blank"> share it with your followers</a> 
+<a href="https://twitter.com/intent/tweet?url=http://anirudh24seven.github.io//devlog/2015/02/13/robotium-android-studio.html&amp;text=Robotium in Android Studio&amp;via=anirudh24seven" target="_blank"> share it with your followers</a> 
 or <a href="https://twitter.com/anirudh24seven"> follow me on Twitter</a>!</p>
 
 
@@ -114,7 +187,7 @@ or <a href="https://twitter.com/anirudh24seven"> follow me on Twitter</a>!</p>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'anirudh24seven-github-io'; // required: replace example with your forum shortname
-  var disqus_identifier = "/devlog/2014/12/08/welcome-to-my-dev-log.html";
+  var disqus_identifier = "/devlog/2015/02/13/robotium-android-studio.html";
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {

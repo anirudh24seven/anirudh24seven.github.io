@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Welcome to my devlog</title>
+    <title>An Android Developer's System Environment</title>
     <meta name="description" content="anirudh24seven's devlog
 ">
 
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://anirudh24seven.github.io//devlog/2014/12/08/welcome-to-my-dev-log.html">
+    <link rel="canonical" href="http://anirudh24seven.github.io//devlog/2015/03/04/an-android-developers-system-environment.html">
 </head>
 
 
@@ -57,47 +57,58 @@
         <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Welcome to my devlog</h1>
-    <p class="post-meta">Dec 8, 2014</p>
+    <h1 class="post-title">An Android Developer's System Environment</h1>
+    <p class="post-meta">Mar 4, 2015</p>
   </header>
 
   <article class="post-content">
-    <p>Almost every developer wants to maintain a devlog. There are a few difficulties though. Here are the top 2 in my mind.</p>
+    <p>I am an Android developer and in this post I will share my working environment.</p>
 
-<h2 id="difficulties">Difficulties:</h2>
+<h4 id="machine">Machine</h4>
+<p>I use a Macbook Air 2014 model and it has been good enough for me. The battery life and the thin profile guarantee that I can use it anywhere I want.</p>
+
+<h4 id="ide">IDE</h4>
+<p>I have been using Android Studio as my IDE for the last one year and it has been great. It is better than Eclipse in almost every aspect: Speed, sensible shortcuts, clean UI and integration with Gradle.</p>
+
+<h4 id="emulator">Emulator</h4>
+<p>Whenever I need the Emulator (eg. lower versions of Android), I prefer Genymotion over the default Emulator. It is blazing fast, feels smooth and even has drag-and-drop support.</p>
+
+<h4 id="device">Device</h4>
+<p>I own a Nexus 5 running Lollipop. I connect to it with a USB cable but also debug over WiFi whenever I feel fancy.</p>
+
+<h4 id="vcs">VCS</h4>
+<p>I use Git in all my projects. Using a GUI for Git helps a lot for looking at branches and commit history. SourceTree has been the best tool in that regard. I also use GitX sometimes.</p>
+
+<h4 id="terminal">Terminal</h4>
+<p>I am a fan of top-down terminals that can be invoked with a global shortcut. The context-switch doesn’t feel heavy and this is very important to me. I used to have Yakuake on my Ubuntu machine and I wanted something similar on OS X. iTerm2 has been the best alternative on the Mac for me.</p>
+
+<h4 id="browser">Browser</h4>
+<p>I used to prefer Firefox because of Mozilla’s philosophy but Chrome looks and feels better. Chrome it is, for now.</p>
+
+<h4 id="social">Social</h4>
+<p>I am a very active user of Twitter and I use the TweetDeck app to keep myself updated. I also have a list of 100+ Android devs and columns in Tweetdeck are very useful to glance through all the lists I have.</p>
+
+<h4 id="time-keeper">Time keeper</h4>
+<p>It is easy to get distracted (especially with Twitter). I have tried out a few time-keeping tools and I have found RescueTime to be the best of them all. Check it out here: <a href="http://rescuetime.com/">http://rescuetime.com/</a></p>
+
+<hr />
+
+<p>Here is the summary:</p>
 
 <ol>
-  <li>Laziness</li>
-  <li>Devs usually can’t/don’t want to reveal their work because of legal/marketing issues</li>
+  <li>Macbook Air 2014</li>
+  <li>Android Studio</li>
+  <li>Genymotion</li>
+  <li>Nexus 5</li>
+  <li>Chrome</li>
+  <li>SourceTree (and/or GitX)</li>
+  <li>iTerm2</li>
+  <li>TweetDeck</li>
+  <li>RescueTime</li>
 </ol>
-
-<h2 id="solutions">Solutions:</h2>
-
-<ol>
-  <li>I have resolved not to be lazy. Trust me.</li>
-  <li>I work on open source stuff. So I don’t think there’ll be issues.</li>
-</ol>
-
-<p>I am an active Twitter user but it is not suited for large posts. First, I experimented with just echoing text into a log file.</p>
-
-<p>Example:</p>
-
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&quot;Welcome to my devlog!&quot;</span> &gt;&gt; 08-12-2014.log</code></pre></div>
-
-<p>However, this approach did not seem comfortable.</p>
-
-<ol>
-  <li>I wanted timestamps and I didn’t want to do them manually</li>
-  <li>I wanted to maintain them online instead of limiting myself to a local machine</li>
-  <li>I wanted to learn something new on the way</li>
-</ol>
-
-<p>I remembered <a href="https://pages.github.com/">GitHub pages</a> and that I had created one at <a href="http://anirudh24seven.github.io/">anirudh24seven.github.io</a> long ago. I experimented around for a while and came upon <a href="jekyllrb.com">Jekyll</a>. It seemed to be just what I wanted.</p>
-
-<p>So, here I am, serving up my first devlog with Jekyll and GitHub pages. Thanks GitHub!</p>
 
 <p>If you liked this post, you can
-<a href="https://twitter.com/intent/tweet?url=http://anirudh24seven.github.io//devlog/2014/12/08/welcome-to-my-dev-log.html&amp;text=Welcome to my devlog&amp;via=anirudh24seven" target="_blank"> share it with your followers</a> 
+<a href="https://twitter.com/intent/tweet?url=http://anirudh24seven.github.io//devlog/2015/03/04/an-android-developers-system-environment.html&amp;text=An Android Developer's System Environment&amp;via=anirudh24seven" target="_blank"> share it with your followers</a> 
 or <a href="https://twitter.com/anirudh24seven"> follow me on Twitter</a>!</p>
 
 
@@ -114,7 +125,7 @@ or <a href="https://twitter.com/anirudh24seven"> follow me on Twitter</a>!</p>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'anirudh24seven-github-io'; // required: replace example with your forum shortname
-  var disqus_identifier = "/devlog/2014/12/08/welcome-to-my-dev-log.html";
+  var disqus_identifier = "/devlog/2015/03/04/an-android-developers-system-environment.html";
 
   /* * * DON'T EDIT BELOW THIS LINE * * */
   (function() {
