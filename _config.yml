@@ -2,7 +2,7 @@
 title: anirudh24seven
 email: anirudh24seven [at] gmail [dot] com
 description: > # this means to ignore newlines until "baseurl:"
-  Thoughts and rants by anirudh24seven
+  anirudh24seven's devlog
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://anirudh24seven.github.io/" # the base hostname & protocol for your site
 twitter_username: anirudh24seven
